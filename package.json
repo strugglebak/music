@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/strugglebak/music/issues"
   },
-  "homepage": "https://github.com/strugglebak/music#readme"
+  "homepage": "https://github.com/strugglebak/music#readme",
+  "dependencies": {
+    "leancloud-storage": "^3.11.1",
+    "qiniu": "^7.2.1"
+  },
+  "devDependencies": {
+    "plupload": "^2.3.6",
+    "qiniu-js": "^1.0.24"
+  }
 }
