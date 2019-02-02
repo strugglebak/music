@@ -21,7 +21,7 @@
     "qiniu": "^7.2.1"
   },
   "devDependencies": {
-    "plupload": "^2.3.6",
-    "qiniu-js": "^1.0.24"
+    "plupload": "^2.3.2",
+    "qiniu-js": "^1.0.22"
   }
 }

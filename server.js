@@ -32,7 +32,6 @@ var server = http.createServer(function(request, response){
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.removeHeader('Date');
 
-
     var config = fs.readFileSync('./qiniu-key.json');
     config = JSON.parse(config);
 

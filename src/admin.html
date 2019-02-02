@@ -3,13 +3,41 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-      <title>music app</title>
+      <title>music admin</title>
     </head>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        *::before, *::after { box-sizing: border-box; }
+        .demo {
+            padding: 50px 80px;
+            border: 2px dashed #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            width: 500px;
+        }
+        span {
+            border: 1px solid red;
+            cursor: pointer;
+        }
+        p {
+            border: 1px solid green;
+        }
+    </style>
     <body>
-        <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js"></script>
-        <script src="../vendors/moxie.js"></script>
-        <script src="../node_modules/plupload/js/plupload.min.js"></script>
-        <script src="../node_modules/qiniu-js/dist/qiniu.min.js"></script>
+
+        <div id="upload-demo" class="demo">
+            <span id="upload-button" class="upload">点击或拖拽文件</span>
+            <p>文件大小不能超过 40mb</p>
+        </div>
+
+        <audio controls src="http://pma54ymw2.bkt.clouddn.com/Linkin%20Park%20-%20Burning%20In%20The%20Skies.mp3"></audio>
+
+        <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" charset="utf-8"></script>
+        <script src="../node_modules/plupload/js/plupload.min.js" charset="utf-8"></script>
+        <script src="../node_modules/qiniu-js/dist/qiniu.min.js" charset="utf-8"></script>
         <script charset="utf-8">
             var APP_ID = 'nXt424k5x57HuC2Fj6aiyJld-gzGzoHsz';
             var APP_KEY = 'E7Yj2scUGpOAU2Sv1ofw1lSU';
@@ -24,21 +52,22 @@
             testObject.save({
                 words: 'Hello World!'
             }).then(function (object) {
-                alert('LeanCloud Rocks!');
+                // alert('LeanCloud Rocks!');
+                console.log('LeanCloud Rocks!')
             }, function (error) {
-                console.log(error)
+                console.log(error);
             });
         </script>
         <script charset="utf-8">
             var uploader = Qiniu.uploader({
                 runtimes: 'html5',    //上传模式,依次退化
-                browse_button: 'xxx',       //上传选择的点选按钮，**必需**
+                browse_button: 'upload-button',       //上传选择的点选按钮，**必需**
                 uptoken_url: 'http://localhost:8888/uptoken',
-                domain: 'http://qiniu-plupload.qiniudn.com/',   //bucket 域名，下载资源时用到，**必需**
+                domain: 'http://pma54ymw2.bkt.clouddn.com',   //bucket 域名，下载资源时用到，**必需**
                 get_new_uptoken: false,  //设置上传文件的时候是否每次都重新获取新的token
                 max_file_size: '40mb',           //最大文件体积限制
                 dragdrop: true,                   //开启可拖曳上传
-                drop_element: 'yyy',        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+                drop_element: 'upload-demo',        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
                 auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
                 init: {
                     'FilesAdded': function (up, files) {
