@@ -17,7 +17,7 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 
 /* aside */
 .content > aside { display: flex; flex-direction: column; width: 200px; }
-.content > aside .songs-list-wrapper { flex-grow: 1; }
+.content > aside .songs-list-wrapper { flex-grow: 1; height: 700px; overflow-y: scroll; scrollbar-color: #ddd white; scrollbar-width: thin; }
 .content > aside .songs-list-wrapper > .songs-list > li { display: flex; flex-direction: row; align-items: center; padding: 10px; }
 .content > aside .songs-list-wrapper > .songs-list > li:nth-child(odd) { background-color: #f7f7f7; }
 
