@@ -304,13 +304,15 @@
                     </div>
                 </aside>
                 <main>
-                    <div id="uploadDragable" class="upload-dragable" style="display: none;">
-                        <div id="uploadButton" class="upload-button">
-                            <span>点击或拖拽文件</span>
-                            <span>文件大小不能超过 40mb</span>
+                    <div class="upload-area">
+                        <div id="uploadDragable" class="upload-dragable">
+                            <span>请选择文件或将文件拖拽至此进行上传</span>
+                        </div>
+                        <div id="uploadButton" class="actions">
+                            <button type="submit">选择文件</button>
                         </div>
                     </div>
-                    <form class="form">
+                    <form class="form" style="display: none;">
                         <div class="column">
                             <div class="row">
                                 <label>歌名:</label>
