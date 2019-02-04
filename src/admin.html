@@ -10,8 +10,45 @@
     </style>
     <body>
         <div class="wrapper">
-            <section class="content">
+            <div class="header">
+                <nav>xxx 音乐后台</nav>
+            </div>
+            <div class="content">
+                <aside>
+                    <ul class="songs-list">
+                        <li>歌曲 1</li>
+                        <li>歌曲 2</li>
+                        <li>歌曲 3</li>
+                        <li>歌曲 4</li>
+                        <li>歌曲 5</li>
+                        <li>歌曲 1</li>
+                        <li>歌曲 2</li>
+                        <li>歌曲 3</li>
+                        <li>歌曲 4</li>
+                        <li>歌曲 5</li>
+                        <li>歌曲 1</li>
+                        <li>歌曲 2</li>
+                        <li>歌曲 3</li>
+                        <li>歌曲 4</li>
+                        <li>歌曲 5</li>
+                        <li>歌曲 1</li>
+                        <li>歌曲 2</li>
+                        <li>歌曲 3</li>
+                        <li>歌曲 4</li>
+                        <li>歌曲 5</li>
+                    </ul>
+                    <div id="newSong" class="new-song">
+                        <span>新增歌曲</span>
+                    </div>
+                </aside>
                 <main>
+                    <div id="uploadDragable" class="upload-dragable">
+                        <div id="uploadButton" class="upload-button">
+                            <span>点击或拖拽文件</span>
+                            <span>文件大小不能超过 40mb</span>
+                        </div>
+                    </div>
+
                     <form class="form">
                         <div class="row">
                             <label>歌名</label>
@@ -26,43 +63,25 @@
                             <input type="text">
                         </div>
                         <div class="row">
+                            <label>封面</label>
+                            <input type="text">
+                        </div>
+                        <div class="row">
+                            <label>歌词</label>
+                            <textarea name="lyrics" cols="50" rows="10"></textarea>
+                        </div>
+                        <div class="row">
                             <div class="save">
-                                <span>save</span>
+                                <button type="submit">save</button>
                             </div>
                         </div>
                     </form>
                 </main>
-                <aside>
-                    <div class="title">
-                        <h1>歌曲列表</h1>
-                        <div class="line"></div>
-                    </div>
-                    <ul class="songs-list">
-                        <li>歌曲 1</li>
-                        <li>歌曲 2</li>
-                        <li>歌曲 3</li>
-                        <li>歌曲 4</li>
-                        <li>歌曲 5</li>
-                    </ul>
-                </aside>
-            </section>
-
-            <section class="footer">
-                <div id="uploadDragable" class="upload-dragable">
-                    <div id="uploadButton" class="upload-button">
-                        <span>点击或拖拽文件</span>
-                        <span>文件大小不能超过 40mb</span>
-                    </div>
-                </div>
-
-                <div id="newSong" class="new-song">
-                    <span>新增歌曲</span>
-                </div>
-            </section>
+            </div>
         </div>
-        <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
+        <!-- <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
         <script src="../node_modules/plupload/js/plupload.min.js" charset="utf-8"></script>
-        <script src="../node_modules/qiniu-js/dist/qiniu.min.js" charset="utf-8"></script>
+        <script src="../node_modules/qiniu-js/dist/qiniu.min.js" charset="utf-8"></script> -->
         <script charset="utf-8">
             // var APP_ID = 'nXt424k5x57HuC2Fj6aiyJld-gzGzoHsz';
             // var APP_KEY = 'E7Yj2scUGpOAU2Sv1ofw1lSU';
