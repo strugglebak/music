@@ -3,7 +3,14 @@
 ul, ol { list-style: none; }
 a { color: inherit; text-decoration: none; }
 body { font-size: 12px; line-height: 1.5; }
+.icon { width: 2em; height: 2em; fill: currentColor; overflow: hidden; }
 
 .wrapper {
     border: 1px solid red;
 }
+
+/* nav */
+.header > nav { padding: 17px 20px; background-color: #242424; }
+.header > nav .logo > a { display: flex; height: 100%; align-items: center; }
+.header > nav .logo > a > span { font-family: Arial, Helvetica, sans-serif; font-size: 23px; color: white; }
+.header > nav .logo > a .icon { border-radius: 100%; background: #C20C0C; fill: white; margin-right: 6px; }
