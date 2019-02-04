@@ -6,7 +6,6 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 .icon { width: 1em; height: 1em; fill: currentColor; overflow: hidden; }
 
 .wrapper {
-    border: 1px solid red;
 }
 
 /* nav */
@@ -20,7 +19,7 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 
 /* .content > aside */
 .content > aside { display: flex; flex-direction: column; width: 200px; }
-.content > aside .songs-list-wrapper { flex-grow: 1; height: 700px; overflow-y: scroll; scrollbar-color: #ddd white; scrollbar-width: thin; }
+.content > aside .songs-list-wrapper { flex-grow: 1; height: 455px; overflow-y: scroll; scrollbar-color: #ddd white; scrollbar-width: thin; }
 .content > aside .songs-list-wrapper > .songs-list > li { display: flex; flex-direction: row; align-items: center; padding: 10px; }
 .content > aside .songs-list-wrapper > .songs-list > li:nth-child(odd) { background-color: #f7f7f7; }
 .content > aside .songs-list-wrapper > .songs-list > li.active { background-color: #ccc; position: relative; }
@@ -55,5 +54,5 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 .content > main .form > .column .row textarea { resize: none; }
 /* .content > main > .upload-area */
 .content > main .upload-area { display: flex; flex-direction: column; font-size: 16px; }
-.content > main .upload-area .upload-dragable { border: 2px dashed #ddd; border-radius: 16px; padding: 14em 14em; color: #ddd; }
-.content > main .upload-area button { margin: 20px 0; height: 36px; width: 200px; padding-left: 10px; padding-right: 10px; border-radius: 5px; border: 2px solid #242424; background-color: white; color: #242424; }
+.content > main .upload-area .upload-dragable { border: 2px dashed #ddd; border-radius: 16px; padding: 10em 10em; color: #ddd; }
+.content > main .upload-area button { margin-top: 20px; height: 36px; width: 200px; padding-left: 10px; padding-right: 10px; border-radius: 5px; border: 2px solid #242424; background-color: white; color: #242424; }
