@@ -48,7 +48,7 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 .content > main .form > .column .row { margin: 20px 0; display: flex; }
 .content > main .form > .column .row label { width: 5em; display: flex; justify-content: flex-end; align-items: center; margin-right: 5px; }
 .content > main .form > .column .row input[type="text"] { padding: 3px 8px; border-radius: 5px; border: 1px solid #ddd; height: 36px; width: 200px; }
-.content > main .form > .column .row.actions { margin-left: calc(4em + 5px); }
+.content > main .form > .column .row.actions { margin-left: calc(5em + 5px); }
 .content > main .form > .column .row button { font-size: 16px; height: 36px; width: 200px; padding-left: 10px; padding-right: 10px; border-radius: 5px; border: 2px solid #242424; background-color: white; color: #242424; }
 .content > main .form > .column .row textarea { resize: none; }
 /* .content > main > .upload-area */
