@@ -304,36 +304,38 @@
                     </div>
                 </aside>
                 <main>
-                    <div id="uploadDragable" class="upload-dragable">
+                    <div id="uploadDragable" class="upload-dragable" style="display: none;">
                         <div id="uploadButton" class="upload-button">
                             <span>点击或拖拽文件</span>
                             <span>文件大小不能超过 40mb</span>
                         </div>
                     </div>
                     <form class="form">
-                        <div class="row">
-                            <label>歌名</label>
-                            <input type="text">
+                        <div class="column">
+                            <div class="row">
+                                <label>歌名:</label>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <label>歌手:</label>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <label>外链:</label>
+                                <input type="text">
+                            </div>
+                            <div class="row">
+                                <label>封面:</label>
+                                <input type="text">
+                            </div>
+                            <div class="row actions">
+                                <button type="submit">保 存</button>
+                            </div>
                         </div>
-                        <div class="row">
-                            <label>歌手</label>
-                            <input type="text">
-                        </div>
-                        <div class="row">
-                            <label>外链</label>
-                            <input type="text">
-                        </div>
-                        <div class="row">
-                            <label>封面</label>
-                            <input type="text">
-                        </div>
-                        <div class="row">
-                            <label>歌词</label>
-                            <textarea name="lyrics" cols="50" rows="10"></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="save">
-                                <button type="submit">save</button>
+                        <div class="column">
+                            <div class="row">
+                                <label>歌词:</label>
+                                <textarea name="lyrics" cols="50" rows="10"></textarea>
                             </div>
                         </div>
                     </form>
