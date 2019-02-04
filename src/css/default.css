@@ -20,6 +20,8 @@ body { font-size: 14px; line-height: 1.5; font-family: Arial, Helvetica, sans-se
 .content > aside .songs-list-wrapper { flex-grow: 1; height: 700px; overflow-y: scroll; scrollbar-color: #ddd white; scrollbar-width: thin; }
 .content > aside .songs-list-wrapper > .songs-list > li { display: flex; flex-direction: row; align-items: center; padding: 10px; }
 .content > aside .songs-list-wrapper > .songs-list > li:nth-child(odd) { background-color: #f7f7f7; }
+.content > aside .songs-list-wrapper > .songs-list > li.active { background-color: #ccc; position: relative; }
+.content > aside .songs-list-wrapper > .songs-list > li.active::before { position: absolute; left: 0; content: ''; width: 4px; height: 52px; background-color: #C20C0C; }
 
 .content > aside .songs-list-wrapper > .songs-list > li .song-header { display: flex; align-items: center; margin-right: 3px; }
 .content > aside .songs-list-wrapper > .songs-list > li .song-header .icon { width: 2em; height: 2em; }
