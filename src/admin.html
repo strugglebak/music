@@ -305,7 +305,7 @@
                     </div>
                 </aside>
                 <main>
-                    <div class="upload-area" style="display: none;">
+                    <div class="upload-area">
                         <div id="uploadDragable" class="upload-dragable">
                             <span>请选择文件或将文件拖拽至此进行上传</span>
                         </div>
@@ -313,7 +313,7 @@
                             <button type="submit">选择文件</button>
                         </div>
                     </div>
-                    <form class="form">
+                    <form class="form" style="display: none;">
                         <div class="column">
                             <div class="row">
                                 <label>音乐标题:</label>
@@ -331,15 +331,15 @@
                                 <label>歌曲封面:</label>
                                 <input type="text">
                             </div>
-                            <div class="row">
-                                <label>歌词:</label>
-                                <textarea name="lyrics" cols="50" rows="10"></textarea>
-                            </div>
                             <div class="row actions">
                                 <button type="submit">保 存</button>
                             </div>
                         </div>
                         <div class="column">
+                            <div class="row">
+                                <label>歌词:</label>
+                                <textarea name="lyrics" cols="25" rows="10"></textarea>
+                            </div>
                         </div>
                     </form>
                 </main>
