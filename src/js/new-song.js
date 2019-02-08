@@ -32,7 +32,6 @@
         bindEvents() {
             this.view.$el.on('click', (e)=> {
                 window.eventHub.emit('new-song', {});
-                console.log('我点击了 new song');
             });
         }
     };

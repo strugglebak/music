@@ -2,6 +2,9 @@
     let view = {
         el: '.content > main .form-area',
         template: `
+            <span class="new-song">新增歌曲</span>
+            <span class="upload">上传成功! 请编辑歌曲信息</span>
+            <span class="selected">编辑歌曲</span>
             <form class="form">
                 <div class="column">
                     <div class="row">
@@ -83,12 +86,21 @@
                 this.view.clearInactive();
                 this.model.data = data;
                 this.view.render(this.model.data);
+                this.view.$el.find('.upload')
+                    .removeClass('inactive')
+                    .siblings().not('.form').addClass('inactive');
             });
             window.eventHub.on('selected', ()=> {
                 this.view.clearInactive();
+                this.view.$el.find('.selected')
+                    .removeClass('inactive')
+                    .siblings().not('.form').addClass('inactive');
             });
             window.eventHub.on('new-song', ()=> {
                 this.view.clearInactive();
+                this.view.$el.find('.new-song')
+                    .removeClass('inactive')
+                    .siblings().not('.form').addClass('inactive');
             });
         },
         bindEvents() {
