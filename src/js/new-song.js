@@ -13,6 +13,9 @@
         `,
         render(data) {
             $(this.el).html(this.template);
+        },
+        init() {
+            this.$el = $(this.el);
         }
     };
     let model = {};
@@ -21,8 +24,16 @@
         model: null,
         init(view, model) {
             this.view = view;
+            this.view.init();
             this.model = model;
             this.view.render(this.model.data);
+            this.bindEvents();
+        },
+        bindEvents() {
+            this.view.$el.on('click', (e)=> {
+                window.eventHub.emit('new-song', {});
+                console.log('我点击了 new song');
+            });
         }
     };
 

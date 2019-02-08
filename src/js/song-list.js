@@ -3,7 +3,11 @@
         el: '.songs-list-wrapper',
         template: `
             <ul class="songs-list">
-                <li class="active">
+            </ul>
+        `,
+        createSong(song) {
+            let li = $(`
+                <li>
                     <div class="song-header">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-song"></use>
@@ -11,7 +15,7 @@
                     </div>
                     <div class="song-content">
                         <div class="song-name">
-                            <span>我是不是你最疼爱的人</span>
+                            <span></span>
                         </div>
                         <div class="song-author">
                             <div class="song-author-header">
@@ -20,25 +24,63 @@
                                 </svg>
                             </div>
                             <div class="song-author-content">
-                                <span>李代沫</span>
+                                <span></span>
                             </div>
                         </div>
                     </div>
                 </li>
-            </ul>
-        `,
+            `);
+            li.find('.song-name > span').text(song.title);
+            li.find('.song-author-content > span').text(song.author);
+            return li;
+        },
         render(data) {
-            $(this.el).html(this.template);
+            let $el = $(this.el);
+            $el.html(this.template);
+            let {songs} = data;
+            let liList = songs.map((song)=> this.createSong(song));
+            $el.find('ul').empty();
+            liList.map((liDom)=> {
+                $el.find('ul').append(liDom);
+            });
+        },
+        clearActive() {
+            $(this.el).find('.active').removeClass('active');
+        },
+        init() {
+            this.$el = $(this.el);
         }
     };
-    let model = {};
+    let model = {
+        data: {
+            songs: [],
+        }
+    };
     let controller = {
         view: null,
         model: null,
         init(view, model) {
             this.view = view;
+            this.view.init();
             this.model = model;
             this.view.render(this.model.data);
+            this.bindEvents();
+
+            window.eventHub.on('save', (songData)=> {
+                this.model.data.songs.push(songData);
+                this.view.render(this.model.data);
+            });
+        },
+        bindEvents() {
+            this.view.$el.on('click', 'li > .song-header > svg', (e)=> {
+                this.view.clearActive();
+                let $currentParent = $(e.target).parent();
+                if ($currentParent.hasClass('icon')) {
+                    $currentParent = $currentParent.parent();
+                }
+                $currentParent.parent().addClass('active');
+                window.eventHub.emit('selected', {});
+            });
         }
     };
 

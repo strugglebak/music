@@ -6,13 +6,4 @@
         appId: APP_ID,
         appKey: APP_KEY
     });
-    // var TestObject = AV.Object.extend('TestObject');
-    // var testObject = new TestObject();
-    // testObject.save({
-    //     words: 'Hello World!'
-    // }).then(function (object) {
-    //     console.log('LeanCloud Rocks!')
-    // }, function (error) {
-    //     console.log(error);
-    // });
 }
