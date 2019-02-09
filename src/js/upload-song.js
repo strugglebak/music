@@ -5,8 +5,8 @@
             <div id="uploadDragable" class="upload-dragable">
                 <span>请选择文件或将文件拖拽至此进行上传</span>
             </div>
-            <div id="uploadButton" class="actions">
-                <button type="submit">选择文件</button>
+            <div class="actions">
+                <button id="uploadButton" type="submit">选择文件</button>
             </div>
         `,
         find(selector) {
