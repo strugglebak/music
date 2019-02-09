@@ -95,6 +95,9 @@
                 }
                 this.view.render(this.model.data);
             });
+            window.eventHub.on('new-song', ()=> {
+                this.view.clearActive();
+            });
         },
         bindEvents() {
             this.view.$el.on('click', 'li > .song-header > svg', (e)=> {
