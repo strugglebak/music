@@ -44,6 +44,7 @@
             liList.map((liDom)=> {
                 $el.find('ul').append(liDom);
             });
+            let $ul = $el.find('ul');
         },
         clearActive() {
             $(this.el).find('.active').removeClass('active');
@@ -78,8 +79,10 @@
             this.fetchAllSongs();
 
             window.eventHub.on('save', (songData)=> {
-                this.model.data.songs.push(songData);
+                this.model.data.songs.unshift(songData);
                 this.view.render(this.model.data);
+                this.view.clearActive();
+                this.active(songData.id);   
             });
             window.eventHub.on('update', (songData)=> {
                 let songs = this.model.data.songs;
@@ -116,6 +119,9 @@
             this.model.fetch().then(()=> {
                 this.view.render(this.model.data);
             }, (error)=> {console(error)});
+        },
+        active(id) {
+            this.view.$el.find(`svg[data-song-id=${id}]`).parent().parent().addClass('active');
         }
     };
 
