@@ -41,7 +41,7 @@
                 this.view.$el.addClass('inactive');
             });
             window.eventHub.on('new-song', ()=> {
-                this.view.$el.addClass('inactive');
+                this.view.$el.removeClass('inactive');
             });
         },
         splitFileName(text) {

@@ -2,7 +2,6 @@
     let view = {
         el: '.content > main .form-area',
         template: `
-            <span class="new-song">新增歌曲</span>
             <span class="upload">上传成功! 请编辑歌曲信息</span>
             <span class="selected">编辑歌曲</span>
             <form class="form">
@@ -97,10 +96,7 @@
                     .siblings().not('.form').addClass('inactive');
             });
             window.eventHub.on('new-song', ()=> {
-                this.view.clearInactive();
-                this.view.$el.find('.new-song')
-                    .removeClass('inactive')
-                    .siblings().not('.form').addClass('inactive');
+                this.view.$el.addClass('inactive');
             });
         },
         bindEvents() {
@@ -111,6 +107,10 @@
                 needs.map((string)=> {
                     data[string] = this.view.$el.find(`input[name=${string}]`).val();
                 });
+                if (! (data['title'] && data['author'] && data['link']) ) {
+                    alert('音乐标题/歌手/歌曲外链都不能为空!请重新填写');
+                    return;
+                }
                 this.model.save(data).then(
                     ()=> {
                         this.view.clean();

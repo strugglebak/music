@@ -54,6 +54,18 @@
     let model = {
         data: {
             songs: [],
+        },
+        async fetch() {
+            var query = new AV.Query('Song');
+            try {
+                const songs = await query.find();
+                this.data.songs = songs.map((song) => {
+                    return { id: song.id, ...song.attributes };
+                });
+            }
+            catch (error) {
+                console.log(error);
+            }
         }
     };
     let controller = {
@@ -65,6 +77,7 @@
             this.model = model;
             this.view.render(this.model.data);
             this.bindEvents();
+            this.fetchAllSongs();
 
             window.eventHub.on('save', (songData)=> {
                 this.model.data.songs.push(songData);
@@ -81,6 +94,11 @@
                 $currentParent.parent().addClass('active');
                 window.eventHub.emit('selected', {});
             });
+        },
+        fetchAllSongs() {
+            this.model.fetch().then(()=> {
+                this.view.render(this.model.data);
+            }, (error)=> {console(error)});
         }
     };
 
