@@ -70,6 +70,16 @@
                 console.log(error);
             });
         },
+        update(data) {
+            var song = AV.Object.createWithoutData('Song', this.data.id);
+            song.set('title', data.title);
+            song.set('author', data.author);
+            song.set('link', data.link);
+            return song.save().then((songData)=> {
+                let {id, attributes} = songData;
+                Object.assign(this.data, {id, ...attributes});
+            }, (error)=> {console.log(error)});
+        },
     };
     let controller = {
         view: null,
@@ -88,6 +98,8 @@
                 this.view.$el.find('span.upload')
                     .removeClass('inactive')
                     .siblings().not('.form').addClass('inactive');
+
+                this.saveData(this.model.data);
             });
             window.eventHub.on('selected', (data)=> {
                 this.view.clearInactive();
@@ -101,11 +113,30 @@
                 this.view.$el.addClass('inactive');
             });
         },
+        saveData(data) {
+            this.model.save(data).then( ()=> {
+                    this.view.clean();
+                    let dataCopy = JSON.parse(JSON.stringify(this.model.data));
+                    window.eventHub.emit('save', dataCopy);
+                    this.view.$el.addClass('inactive');
+                }, (error)=> { console.log(error); }
+            );
+        },
+        updateData(data) {
+            this.model.update(data).then( ()=> {
+                    this.view.clean();
+                    let dataCopy = JSON.parse(JSON.stringify(this.model.data));
+                    window.eventHub.emit('update', dataCopy);
+                    this.view.$el.addClass('inactive');
+                }, (error)=> { console.log(error); }
+            );
+        },
         bindEvents() {
             this.view.$el.on('submit', 'form', (e)=> {
                 e.preventDefault();
                 let needs = 'title author link'.split(' ');
                 let data = {};
+                data['id'] = this.model.data.id;
                 needs.map((string)=> {
                     data[string] = this.view.$el.find(`input[name=${string}]`).val();
                 });
@@ -113,17 +144,7 @@
                     alert('音乐标题/歌手/歌曲外链都不能为空!请重新填写');
                     return;
                 }
-                this.model.save(data).then(
-                    ()=> {
-                        this.view.clean();
-                        let dataCopy = JSON.parse(JSON.stringify(this.model.data));
-                        window.eventHub.emit('save', dataCopy);
-                        this.view.$el.addClass('inactive');
-                    }, 
-                    (error)=> {
-                        console.log(error);
-                    }
-                );
+                this.updateData(data);
             });
         },
     };

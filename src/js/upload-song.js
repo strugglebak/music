@@ -37,6 +37,9 @@
             window.eventHub.on('save', (data)=> {
                 this.view.clearInactive();
             });
+            window.eventHub.on('update', ()=> {
+                this.view.$el.removeClass('inactive');
+            });
             window.eventHub.on('selected', (data)=> {
                 this.view.$el.addClass('inactive');
             });

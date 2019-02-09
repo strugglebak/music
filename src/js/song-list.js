@@ -81,6 +81,16 @@
                 this.model.data.songs.push(songData);
                 this.view.render(this.model.data);
             });
+            window.eventHub.on('update', (songData)=> {
+                let songs = this.model.data.songs;
+                for (let i=0; i<songs.length; i++) {
+                    if (songs[i].id === songData.id) {
+                        songs[i] = songData;
+                        break;
+                    }
+                }
+                this.view.render(this.model.data);
+            });
         },
         bindEvents() {
             this.view.$el.on('click', 'li > .song-header > svg', (e)=> {
