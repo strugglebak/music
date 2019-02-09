@@ -6,10 +6,10 @@
             </ul>
         `,
         createSong(song) {
-            let li = $(`
+            let $li = $(`
                 <li>
                     <div class="song-header">
-                        <svg class="icon" aria-hidden="true">
+                        <svg class="icon" aria-hidden="true" data-song-id="">
                             <use xlink:href="#icon-song"></use>
                         </svg>
                     </div>
@@ -30,9 +30,10 @@
                     </div>
                 </li>
             `);
-            li.find('.song-name > span').text(song.title);
-            li.find('.song-author-content > span').text(song.author);
-            return li;
+            $li.find('.song-name > span').text(song.title);
+            $li.find('.song-author-content > span').text(song.author);
+            $li.find('.song-header .icon').attr('data-song-id', song.id);
+            return $li;
         },
         render(data) {
             let $el = $(this.el);
@@ -55,17 +56,14 @@
         data: {
             songs: [],
         },
-        async fetch() {
+        fetch() {
             var query = new AV.Query('Song');
-            try {
-                const songs = await query.find();
+            return query.find().then((songs)=> {
                 this.data.songs = songs.map((song) => {
                     return { id: song.id, ...song.attributes };
                 });
-            }
-            catch (error) {
-                console.log(error);
-            }
+                return songs;
+            });
         }
     };
     let controller = {
@@ -87,12 +85,21 @@
         bindEvents() {
             this.view.$el.on('click', 'li > .song-header > svg', (e)=> {
                 this.view.clearActive();
-                let $currentParent = $(e.target).parent();
+                let $currentParent = $(e.currentTarget).parent();
                 if ($currentParent.hasClass('icon')) {
                     $currentParent = $currentParent.parent();
                 }
                 $currentParent.parent().addClass('active');
-                window.eventHub.emit('selected', {});
+                let songId = e.currentTarget.getAttribute('data-song-id');
+                let songs = this.model.data.songs;
+                let dataCopy;
+                for (let i=0; i<songs.length; i++) {
+                    if (songs[i].id === songId) {
+                        dataCopy = JSON.parse(JSON.stringify(songs[i]));
+                        break;
+                    }
+                }
+                window.eventHub.emit('selected', dataCopy);
             });
         },
         fetchAllSongs() {

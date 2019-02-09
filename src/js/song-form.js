@@ -85,13 +85,15 @@
                 this.view.clearInactive();
                 this.model.data = data;
                 this.view.render(this.model.data);
-                this.view.$el.find('.upload')
+                this.view.$el.find('span.upload')
                     .removeClass('inactive')
                     .siblings().not('.form').addClass('inactive');
             });
-            window.eventHub.on('selected', ()=> {
+            window.eventHub.on('selected', (data)=> {
                 this.view.clearInactive();
-                this.view.$el.find('.selected')
+                this.model.data = data;
+                this.view.render(this.model.data);
+                this.view.$el.find('span.selected')
                     .removeClass('inactive')
                     .siblings().not('.form').addClass('inactive');
             });

@@ -37,7 +37,7 @@
             window.eventHub.on('save', (data)=> {
                 this.view.clearInactive();
             });
-            window.eventHub.on('selected', ()=> {
+            window.eventHub.on('selected', (data)=> {
                 this.view.$el.addClass('inactive');
             });
             window.eventHub.on('new-song', ()=> {
