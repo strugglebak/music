@@ -33,6 +33,7 @@
                     <div class="form-area"></div>
                 </main>
             </div>
+            <div id="siteLoading" class="site-loading"></div>
         </div>
         <script src="//at.alicdn.com/t/font_1039278_3kgnjd15tof.js" charset="utf-8"></script>
         <script src="../node_modules/leancloud-storage/dist/av-min.js" charset="utf-8"></script>
@@ -41,37 +42,12 @@
         <script src="../node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
         <script src="js/app.js" charset="utf-8"></script>
         <script src="js/event-hub.js" charset="utf-8"></script>
-        <script src="js/init-av.js" charset="utf-8"></script>
+        <script src="js/init/init-av.js" charset="utf-8"></script>
+        <script src="js/init/init.js" charset="utf-8"></script>
         <script src="js/new-song.js" charset="utf-8"></script>
         <script src="js/song-list.js" charset="utf-8"></script>
         <script src="js/song-form.js" charset="utf-8"></script>
         <script src="js/upload-song.js" charset="utf-8"></script>
-        <script>
-            var dropzoneId = "uploadDragable";
-
-            window.addEventListener("dragenter", function(e) {
-                if (e.target.id != dropzoneId) {
-                    e.preventDefault();
-                    e.dataTransfer.effectAllowed = "none";
-                    e.dataTransfer.dropEffect = "none";
-                }
-            }, false);
-
-            window.addEventListener("dragover", function(e) {
-                if (e.target.id != dropzoneId) {
-                    e.preventDefault();
-                    e.dataTransfer.effectAllowed = "none";
-                    e.dataTransfer.dropEffect = "none";
-                }
-            });
-
-            window.addEventListener("drop", function(e) {
-                if (e.target.id != dropzoneId) {
-                    e.preventDefault();
-                    e.dataTransfer.effectAllowed = "none";
-                    e.dataTransfer.dropEffect = "none";
-                }
-            });
-        </script>
+        <script src="js/loading.js"></script>
     </body>
   </html>
