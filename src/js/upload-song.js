@@ -35,7 +35,7 @@
             this.initQiniu();
 
             window.eventHub.on('save', (data)=> {
-                this.view.clearInactive();
+                this.view.$el.addClass('inactive');
             });
             window.eventHub.on('update', ()=> {
                 this.view.$el.removeClass('inactive');

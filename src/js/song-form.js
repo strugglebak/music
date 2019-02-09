@@ -115,10 +115,9 @@
         },
         saveData(data) {
             this.model.save(data).then( ()=> {
-                    this.view.clean();
                     let dataCopy = JSON.parse(JSON.stringify(this.model.data));
                     window.eventHub.emit('save', dataCopy);
-                    this.view.$el.addClass('inactive');
+                    this.view.clearInactive();
                 }, (error)=> { console.log(error); }
             );
         },
