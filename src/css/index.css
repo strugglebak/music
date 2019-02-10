@@ -39,11 +39,12 @@ section.songs-play-list { margin-top: 32px; }
 section.songs-play-list h2 { font-size: 17px; margin-bottom: 6px; padding-left: 9px; height: 20px; line-height: 20px; position: relative; }
 section.songs-play-list h2::after { content: ''; display: block; position: absolute; top: 50%; left: 0; margin-top: -8px; border: 1px solid #d33a31; height: 16px; }
 section.songs-play-list .songs { margin-top: 14px; }
-section.songs-play-list .songs > li > a { display: flex; padding-left: 10px; }
-section.songs-play-list .songs > li > a .song-info { flex: 1 1 auto; width: 0; padding: 6px 0; border-bottom: 1px solid #e2e2e3; }
-section.songs-play-list .songs > li > a .song-info .title { font-size: 17px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: normal; }
-section.songs-play-list .songs > li > a .song-info .detail { display: flex; align-items: center; vertical-align: middle; }
-section.songs-play-list .songs > li > a .song-info .detail > svg { width: 14px; height: 12px; fill: #fe672e; margin-right: 4px; }
-section.songs-play-list .songs > li > a .song-info .detail .text { font-size: 12px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: normal; }
-section.songs-play-list .songs > li > a .play { padding: 0 10px; display: flex; align-items: center; }
-section.songs-play-list .songs > li > a .play > svg { width: 22px; height: 22px; }
+section.songs-play-list .songs > li > a { display: inline-block; width: 100%; padding-left: 10px; }
+section.songs-play-list .songs > li > a > .song-info-wrapper { display: flex; border-bottom: 1px solid #e2e2e2;}
+section.songs-play-list .songs > li > a > .song-info-wrapper .song-info { flex: 1 1 auto; width: 0; padding: 6px 0; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .song-info .title { font-size: 17px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: normal; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .song-info .detail { display: flex; align-items: center; vertical-align: middle; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .song-info .detail > svg { width: 14px; height: 12px; fill: #fe672e; margin-right: 4px; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .song-info .detail .text { font-size: 12px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; word-break: normal; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .play { padding: 0 10px; display: flex; align-items: center; }
+section.songs-play-list .songs > li > a > .song-info-wrapper .play > svg { width: 22px; height: 22px; }
