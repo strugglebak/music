@@ -13,7 +13,7 @@ nav.top-nav-bar { display: flex; justify-content: space-between; align-items: ce
 nav.top-nav-bar .logo { display: flex; }
 nav.top-nav-bar .logo > svg { width: 142px; height: 25px; }
 nav.top-nav-bar .download { color: white; display: inline-block; font-size: 15px; position: relative; padding: 5px 10px; line-height: 20px; cursor: pointer; }
-nav.top-nav-bar .download::after{ content: ''; display: block; border: 1px solid white; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 37.5%/100%; transform-origin: 0 0; z-index: 2;}
+nav.top-nav-bar .download::after { content: ''; display: block; border: 1px solid white; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 37.5%/100%; transform-origin: 0 0; z-index: 2;}
 /* stiky-bar gloable-tabs */
 nav.gloable-tabs { background: white; border-bottom: 1px solid #ccc; }
 nav.gloable-tabs > ol { display: flex; }
@@ -27,7 +27,9 @@ section.songs-list h2 { font-size: 17px; margin-bottom: 6px; padding-left: 9px; 
 section.songs-list h2::after { content: ''; display: block; position: absolute; top: 50%; left: 0; margin-top: -8px; border: 1px solid #d33a31; height: 16px; }
 section.songs-list .songs { display: flex; flex-wrap: wrap; justify-content: space-between; font-size: 13px; }
 section.songs-list .songs > li { width: 32.8%; margin: 8px 0; }
-section.songs-list .songs > li > a { display: inline-block; }
+section.songs-list .songs > li > a { display: inline-block; position: relative;}
+section.songs-list .songs > li > a .listen { text-shadow: 1px 0 0 rgba(0,0,0,.2); position: absolute; top: 2px; right: 5px; padding-left: 13px; color: white; font-size: 12px; }
+section.songs-list .songs > li > a .listen > svg { fill: white; }
 section.songs-list .songs > li > a > img { width: 100%; }
 section.songs-list .songs > li > a > p { display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; padding: 6px 2px 0 6px; line-height: 1.2; }
 /* tab-content songs-play-list */
