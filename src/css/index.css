@@ -28,8 +28,8 @@ section.songs-list h2::after { content: ''; display: block; position: absolute; 
 section.songs-list .songs { display: flex; flex-wrap: wrap; justify-content: space-between; font-size: 13px; }
 section.songs-list .songs > li { width: 32.8%; margin: 8px 0; }
 section.songs-list .songs > li > a { display: inline-block; position: relative;}
-section.songs-list .songs > li > a .listen { text-shadow: 1px 0 0 rgba(0,0,0,.2); position: absolute; top: 2px; right: 5px; padding-left: 13px; color: white; font-size: 12px; }
-section.songs-list .songs > li > a .listen > svg { fill: white; }
+section.songs-list .songs > li > a .listen { display: flex; align-items: center; vertical-align: top; text-shadow: 1px 0 0 rgba(0,0,0,.2); position: absolute; top: 2px; right: 5px; padding-left: 13px; color: white; font-size: 12px; }
+section.songs-list .songs > li > a .listen > svg { fill: white; margin-right: 4px; }
 section.songs-list .songs > li > a > img { width: 100%; }
 section.songs-list .songs > li > a > p { display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; padding: 6px 2px 0 6px; line-height: 1.2; }
 /* tab-content songs-play-list */
