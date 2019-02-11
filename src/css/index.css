@@ -80,3 +80,20 @@ section.hotsongs-play-list .songs > li > a > .song-info-wrapper .wrapper .play >
 /* page-hotsongs hotsongs-view */
 section.hotsongs-view a { display: flex; justify-content: center; width: 100%; }
 section.hotsongs-view a span { display: inline-block; color: #999; line-height: 55px; }
+
+/* page-search search */
+section.search > form { display: block; padding: 15px 10px; position: relative; }
+section.search > form::after { position: absolute; content: ''; display: block; left: 0; bottom: 0; height: 1px; width: 100%; background: #ccc; }
+section.search > form .input-wrapper { background: #ebecec; border-radius: 30px; display: flex; }
+section.search > form .input-wrapper .input-head { display: flex; align-items: center; padding: 0 7px; }
+section.search > form .input-wrapper .input-head > svg { width: 14px; height: 14px; fill: #c9c9ca; }
+section.search > form .input-wrapper > input[type="text"] { width: 100%; line-height: 26px; height: 30px; color: #c9c9ca; border: none; background: #ebecec; caret-color: black; }
+section.search > form .input-wrapper .input-tail { width: 30px; height: 30px; }
+/* page-search hot-search-view */
+section.hot-search-view { padding: 15px 10px 0; }
+section.hot-search-view h3 { font-size: 12px; line-height: 12px; color: #666; }
+section.hot-search-view .default-search > ol { display: flex; flex-wrap: wrap; justify-content: flex-start; }
+section.hot-search-view .default-search > ol { margin: 10px 0 7px; }
+section.hot-search-view .default-search > ol > li { margin-right: 8px; margin-bottom: 8px; }
+section.hot-search-view .default-search > ol > li > a { display: flex; align-items: center; font-size: 14px; line-height: 32px; height: 32px; color: #333; padding: 0 14px; position: relative; }
+section.hot-search-view .default-search > ol > li > a::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; transform-origin: top left; border: 1px solid rgba(0,0,0,.1); border-radius: 32px; }
