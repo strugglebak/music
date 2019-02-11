@@ -5,8 +5,5 @@ ul,ol{ list-style: none; }
 h1,h2,h3,h4,h5,h6{ font-weight: 400; pointer-events: none; -webkit-user-select: none; }
 body{ font:14px/1.5 Helvetica,sans-serif; }
 
-/* bg-wrapper */
-section.bg-wrapper { min-width: 320px; height: 100vh; }
-section.bg-wrapper .bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url(../img/play-song-bg-test.jpg) no-repeat; background-size: auto 100%; background-position: 50%; transform-origin: top center; transform: scale(1.5); opacity: 1; z-index: -1; } 
-section.bg-wrapper .bg::after { content: ''; display: block; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
-
+.page-wrapper { height: 100vh; background: url(../img/play-song-bg-test.jpg) no-repeat center; background-size: cover; position: relative; }
+.page-wrapper::after { position: absolute; content: ''; display: block; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1; }
