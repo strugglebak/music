@@ -394,22 +394,6 @@
     </div>
     <script src="//at.alicdn.com/t/font_1039278_bxiav5j8rzw.js" charset="utf-8"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
-    <script>
-        let $ol = $('nav.gloable-tabs > ol');
-        let $li = $($ol.children()[0]);
-        $li.addClass('active');
-        $ol.on('click', 'li', (e)=> {
-            let $el = $(e.currentTarget);
-            $el.addClass('active')
-                .siblings().removeClass('active');
-            if ($el.hasClass('page-recommands')) {
-                $('ol.tab-content > li.page-recommands').addClass('active').siblings().removeClass('active');
-            } else if ($el.hasClass('page-hotsongs')) {
-                $('ol.tab-content > li.page-hotsongs').addClass('active').siblings().removeClass('active');
-            } else if ($el.hasClass('page-search')) {
-                $('ol.tab-content > li.page-search').addClass('active').siblings().removeClass('active');
-            }
-        });
-    </script>
+    <script src="./js/index/tab-change.js" charset="utf-8"></script>
 </body>
 </html>
