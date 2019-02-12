@@ -3,7 +3,7 @@
         el: 'section.songs-play-list > ol.songs',
         template: `
             <li>
-                <a href="#">
+                <a href="/src/song?id={{song.id}}">
                     <div class="song-info-wrapper">
                         <div class="song-info">
                             <div class="title">{{song.title}}</div>
@@ -26,8 +26,9 @@
             let {songs} = data;
             songs.map((song)=> {
                 let $li = $(this.template
+                    .replace('{{song.id}}', song.id)
                     .replace('{{song.title}}', song.title)
-                    .replace('{{song.author}} - {{song.title}}', `${song.author} - ${song.title}`));
+                    .replace('{{song.author}} - {{song.title}}', `${song.author} - ${song.title}`))
                 $(this.el).append($li);
             });
         }
@@ -57,7 +58,11 @@
             this.fetchAllSongs();
             this.bindEvents();
         },
-        bindEvents() {},
+        bindEvents() {
+            this.view.$el.on('click', 'li', (e)=> {
+                
+            });
+        },
         fetchAllSongs() {
             this.model.fetch().then(()=> {
                 this.view.render(this.model.data);
