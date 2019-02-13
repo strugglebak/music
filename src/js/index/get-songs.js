@@ -58,11 +58,7 @@
             this.fetchAllSongs();
             this.bindEvents();
         },
-        bindEvents() {
-            this.view.$el.on('click', 'li', (e)=> {
-                
-            });
-        },
+        bindEvents() {},
         fetchAllSongs() {
             this.model.fetch().then(()=> {
                 this.view.render(this.model.data);
