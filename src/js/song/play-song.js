@@ -50,7 +50,6 @@
         },
         onPlayEnd() {
             this.audio.onended = ()=> {
-                alert('song is over');
                 this.pause();
                 this.addPauseClassForPlayButton();
                 this.removePlayingClass();
