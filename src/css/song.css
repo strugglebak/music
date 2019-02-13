@@ -25,6 +25,9 @@ section.disc-wrapper .needle { position: absolute; width: 26vw; top: 0; left: 45
 section.disc-wrapper .disc { margin-top: 18vw; display: flex; justify-content: center; align-items: center; position: relative; }
 section.disc-wrapper .disc img { z-index: 2; }
 section.disc-wrapper .disc .play { position: absolute; width: 15vw; z-index: 3; }
+section.disc-wrapper .disc .play.pause { visibility: visible; }
+section.disc-wrapper .disc .play.start { visibility: hidden; }
+
 section.disc-wrapper .disc .circle { width: 80vw; }
 section.disc-wrapper .disc .cover { position: absolute; width: 44.5vw; border-radius: 50%; }
 section.disc-wrapper .disc .light { position: absolute; width: 80vw; }

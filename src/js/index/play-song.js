@@ -31,7 +31,17 @@
             this.bindEvents();
             this.initAudio();
         },
-        bindEvents() {},
+        bindEvents() {
+            this.view.$el.on('click', (e)=> {
+                if (this.audio.paused) {
+                    this.play();
+                    this.addStartClass();
+                } else {
+                    this.pause();
+                    this.addPauseClass();
+                }
+            });
+        },
         getSongId() {
             let parsedUrl = new URL(window.location.href);
             return parsedUrl.searchParams.get('id');
@@ -41,6 +51,7 @@
             this.model.fetchSongById(this.model.data.id).then(()=> {
                 this.audio = new Audio(this.model.data.link);
                 this.audio.play();
+                this.addStartClass();
             });
         },
         play() {
@@ -48,6 +59,14 @@
         },
         pause() {
             this.audio.pause();
+        },
+        addStartClass() {
+            let playButton = this.view.$el.find('section.disc-wrapper .disc > img.play');
+            $(playButton).removeClass('pause').addClass('start');
+        },
+        addPauseClass() {
+            let playButton = this.view.$el.find('section.disc-wrapper .disc > img.play');
+            $(playButton).removeClass('start').addClass('pause');
         }
     };
 
