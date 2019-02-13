@@ -50,7 +50,7 @@ section.disc-wrapper.playing .disc .light {
 
 section.song { z-index: 3; margin-top: 25px; }
 section.song .song-detail { padding: 0 35px; }
-section.song .song-detail h2 { color: #fefefe; text-align: center; line-height: 1.1; font-size: 18px; font-weight: 400; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+section.song .song-detail h2 { color: #fefefe; text-align: center; line-height: 1.4; font-size: 18px; font-weight: 400; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 section.song .song-detail h2 .song-author { color: hsla(0,0%,100%,.6); }
 
 section.song .song-lyric { margin-top: 14px; color: #fefefe; height: 48px; overflow: hidden; }
