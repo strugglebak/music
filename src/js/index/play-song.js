@@ -27,6 +27,7 @@
         init(view, model) {
             this.view = view;
             this.view.init();
+            this.initView();
             this.model = model;
             this.bindEvents();
             this.initAudio();
@@ -35,10 +36,10 @@
             this.view.$el.on('click', (e)=> {
                 if (this.audio.paused) {
                     this.play();
-                    this.addStartClass();
+                    this.addPlayingClass();
                 } else {
                     this.pause();
-                    this.addPauseClass();
+                    this.removePlayingClass();
                 }
             });
         },
@@ -46,12 +47,16 @@
             let parsedUrl = new URL(window.location.href);
             return parsedUrl.searchParams.get('id');
         },
+        initView() {
+            let playButton = this.view.$el.find('section.disc-wrapper > .disc > img.play');
+            $(playButton).attr('display', 'none');
+        },
         initAudio() {
             this.model.data.id = this.getSongId();
             this.model.fetchSongById(this.model.data.id).then(()=> {
                 this.audio = new Audio(this.model.data.link);
                 this.audio.play();
-                this.addStartClass();
+                this.addPlayingClass();
             });
         },
         play() {
@@ -60,13 +65,13 @@
         pause() {
             this.audio.pause();
         },
-        addStartClass() {
-            let playButton = this.view.$el.find('section.disc-wrapper .disc > img.play');
-            $(playButton).removeClass('pause').addClass('start');
+        addPlayingClass() {
+            let discWrapper = this.view.$el.find('section.disc-wrapper');
+            $(discWrapper).addClass('playing');
         },
-        addPauseClass() {
-            let playButton = this.view.$el.find('section.disc-wrapper .disc > img.play');
-            $(playButton).removeClass('start').addClass('pause');
+        removePlayingClass() {
+            let discWrapper = this.view.$el.find('section.disc-wrapper');
+            $(discWrapper).removeClass('playing');
         }
     };
 

@@ -14,6 +14,10 @@ body{ font:14px/1.5 Helvetica,sans-serif; }
     90% { background-position: 0 -72px; }
     100% { background-position: 0 -84px; }
 }
+@keyframes revolve {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 .page-wrapper { background: url(../img/play-song-bg-test.jpg) no-repeat center; background-size: cover; }
 
@@ -24,13 +28,22 @@ section.disc-wrapper { position: relative; }
 section.disc-wrapper .needle { position: absolute; width: 26vw; top: 0; left: 45vw; z-index: 3; }
 section.disc-wrapper .disc { margin-top: 18vw; display: flex; justify-content: center; align-items: center; position: relative; }
 section.disc-wrapper .disc img { z-index: 2; }
-section.disc-wrapper .disc .play { position: absolute; width: 15vw; z-index: 3; }
-section.disc-wrapper .disc .play.pause { visibility: visible; }
-section.disc-wrapper .disc .play.start { visibility: hidden; }
-
 section.disc-wrapper .disc .circle { width: 80vw; }
+
+section.disc-wrapper .disc .play { position: absolute; width: 15vw; z-index: 3; display: block; }
 section.disc-wrapper .disc .cover { position: absolute; width: 44.5vw; border-radius: 50%; }
 section.disc-wrapper .disc .light { position: absolute; width: 80vw; }
+
+section.disc-wrapper .disc .cover,
+section.disc-wrapper .disc .light {
+    animation: revolve 20s infinite linear; 
+    animation-play-state: paused;
+}
+section.disc-wrapper.playing .disc .play { display: none; }
+section.disc-wrapper.playing .disc .cover,
+section.disc-wrapper.playing .disc .light {
+    animation-play-state: running;
+}
 
 section.song { z-index: 3; margin-top: 25px; }
 section.song .song-detail { padding: 0 35px; }
