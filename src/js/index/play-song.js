@@ -27,7 +27,6 @@
         init(view, model) {
             this.view = view;
             this.view.init();
-            this.initView();
             this.model = model;
             this.bindEvents();
             this.initAudio();
@@ -36,9 +35,11 @@
             this.view.$el.on('click', (e)=> {
                 if (this.audio.paused) {
                     this.play();
+                    this.removePauseClassForPlayButton();
                     this.addPlayingClass();
                 } else {
                     this.pause();
+                    this.addPauseClassForPlayButton();
                     this.removePlayingClass();
                 }
             });
@@ -46,10 +47,6 @@
         getSongId() {
             let parsedUrl = new URL(window.location.href);
             return parsedUrl.searchParams.get('id');
-        },
-        initView() {
-            let playButton = this.view.$el.find('section.disc-wrapper > .disc > img.play');
-            $(playButton).attr('display', 'none');
         },
         initAudio() {
             this.model.data.id = this.getSongId();
@@ -72,6 +69,14 @@
         removePlayingClass() {
             let discWrapper = this.view.$el.find('section.disc-wrapper');
             $(discWrapper).removeClass('playing');
+        },
+        addPauseClassForPlayButton() {
+            let playButton = this.view.$el.find('section.disc-wrapper .disc img.play');
+            $(playButton).addClass('pause');
+        },
+        removePauseClassForPlayButton() {
+            let playButton = this.view.$el.find('section.disc-wrapper .disc img.play');
+            $(playButton).removeClass('pause');
         }
     };
 
