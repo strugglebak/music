@@ -10,7 +10,7 @@
     };
     let model = {
         data: {
-            title: '', author: '', link: '', id: '',
+            title: '', author: '', link: '', lyric: '', id: '',
         },
         fetchSongById(id) {
             var Song = new AV.Query('Song');
@@ -51,9 +51,11 @@
         initAudio() {
             this.model.data.id = this.getSongId();
             this.model.fetchSongById(this.model.data.id).then(()=> {
+                let dataCopy = JSON.parse(JSON.stringify(this.model.data));
                 this.audio = new Audio(this.model.data.link);
                 this.audio.play();
                 this.addPlayingClass();
+                window.eventHub.emit('xxx', {songData: dataCopy, audio:this.audio});
             });
         },
         play() {
