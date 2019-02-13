@@ -55,7 +55,8 @@ section.song .song-detail h2 .song-author { color: hsla(0,0%,100%,.6); }
 
 section.song .song-lyric { margin-top: 14px; color: #fefefe; height: 48px; overflow: hidden; }
 section.song .song-lyric .lines { text-align: center; transition: transform .3s ease-out; }
-section.song .song-lyric .lines p { font-size: 16px; line-height: 1.5; }
+section.song .song-lyric .lines p { font-size: 16px; line-height: 1.5; color: hsla(0,0%,100%,.6); }
+section.song .song-lyric .lines p.active { color: white; }
 
 section.links { margin-top: auto; }
 section.links .more { display: flex; flex-direction: column; justify-content: center; }

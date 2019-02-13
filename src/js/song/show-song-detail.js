@@ -58,6 +58,8 @@
             lines.css({
                 transform: `translateY(${-(height)}px)`
             });
+
+            $(p).addClass('active').siblings('.active').removeClass('active');
         }
     };
     let model = {
