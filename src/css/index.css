@@ -40,6 +40,26 @@ section.songs-list .songs > li > a > img { width: 100%; }
 section.songs-list .songs > li > a > p { display: -webkit-box; -webkit-line-clamp: 2; overflow: hidden; padding: 6px 2px 0 6px; line-height: 1.2; }
 /* page-recommand songs-play-list */
 section.songs-play-list { margin-top: 32px; }
+section.songs-play-list .loading-wrapper {
+    position: relative;
+    height: 20px;
+    display: none;
+}
+section.songs-play-list .loading-wrapper.active {
+    display: block;
+}
+section.songs-play-list .loading {
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 100; width: 100%; height: 100%;
+    background: url(../img/index.gif) 50% no-repeat;
+    background-size: auto;
+    background-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 section.songs-play-list h2 { font-size: 17px; margin-bottom: 6px; padding-left: 9px; height: 20px; line-height: 20px; position: relative; }
 section.songs-play-list h2::after { content: ''; display: block; position: absolute; top: 50%; left: 0; margin-top: -8px; border: 1px solid #d33a31; height: 16px; }
 section.songs-play-list .songs { margin-top: 14px; }

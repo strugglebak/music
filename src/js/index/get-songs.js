@@ -56,12 +56,16 @@
             this.view = view;
             this.view.init();
             this.model = model;
+
+            window.eventHub.emit('loading', {});
+
             this.fetchAllSongs();
             this.bindEvents();
         },
         bindEvents() {},
         fetchAllSongs() {
             this.model.fetch().then(()=> {
+                window.eventHub.emit('after-load', {});
                 this.view.render(this.model.data);
             }, (error)=> {console(error)});
         },
