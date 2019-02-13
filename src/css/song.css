@@ -31,22 +31,14 @@ section.disc-wrapper .disc img { z-index: 2; }
 section.disc-wrapper .disc .circle { width: 80vw; }
 
 section.disc-wrapper .disc .play { position: absolute; width: 15vw; z-index: 3; display: none; }
-section.disc-wrapper .disc .play.pause {
-    display: block;
-}
-
+section.disc-wrapper .disc .play.pause { display: block; } 
 section.disc-wrapper .disc .cover { position: absolute; width: 44.5vw; border-radius: 50%; }
 section.disc-wrapper .disc .light { position: absolute; width: 80vw; }
 
 section.disc-wrapper .disc .cover,
-section.disc-wrapper .disc .light {
-    animation: revolve 20s infinite linear; 
-    animation-play-state: paused;
-}
+section.disc-wrapper .disc .light { animation: revolve 20s infinite linear; animation-play-state: paused; }
 section.disc-wrapper.playing .disc .cover,
-section.disc-wrapper.playing .disc .light {
-    animation-play-state: running;
-}
+section.disc-wrapper.playing .disc .light { animation-play-state: running; }
 
 section.song { z-index: 3; margin-top: 25px; }
 section.song .song-detail { padding: 0 35px; }
