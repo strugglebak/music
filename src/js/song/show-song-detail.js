@@ -96,7 +96,6 @@
                 let {songData, audio} = data;
                 Object.assign(this.model.data.song, songData);
                 this.view.render(this.model.data);
-                // console.log(audio)
                 this.audio = audio;
                 this.audio.ontimeupdate = ()=> {
                     this.view.showLyric(this.audio.currentTime);

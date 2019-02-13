@@ -48,6 +48,14 @@
             let parsedUrl = new URL(window.location.href);
             return parsedUrl.searchParams.get('id');
         },
+        onPlayEnd() {
+            this.audio.onended = ()=> {
+                alert('song is over');
+                this.pause();
+                this.addPauseClassForPlayButton();
+                this.removePlayingClass();
+            }
+        },
         initAudio() {
             this.model.data.id = this.getSongId();
             this.model.fetchSongById(this.model.data.id).then(()=> {
@@ -55,7 +63,8 @@
                 this.audio = new Audio(this.model.data.link);
                 this.audio.play();
                 this.addPlayingClass();
-                window.eventHub.emit('xxx', {songData: dataCopy, audio:this.audio});
+                this.onPlayEnd();
+                window.eventHub.emit('xxx', {songData: dataCopy, audio: this.audio});
             });
         },
         play() {
