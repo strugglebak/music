@@ -9,9 +9,18 @@
                     <span class="song-author">{{song.author}}</span>
                 </h2>
             </div>
+            <div class="song-lyric">
+                <div class="lines"></div>
+            </div>
         `,
         render(data) {
             let {song} = data;
+            let $div = $( 
+                this.template
+                .replace('{{song.title}}', song.title)
+                .replace('{{song.author}}', song.author));
+            $(this.el).append($div);
+
             let {lyric} = song;
             lyric.split('\n').map((string)=> {
                 let p = document.createElement('p');
@@ -28,7 +37,7 @@
                 } else {
                     p.textContent = string;
                 }
-                $(this.el).children().children().append(p);
+                $(this.el).find('.song-lyric .lines').append(p);
             });
         },
         findCurtimePElement(allP, time) {
@@ -49,10 +58,10 @@
             return p;
         },
         showLyric(time) {
-            let allP = $(this.el).children().children().children();
+            let allP = $(this.el).find('.song-lyric .lines > p');
             let p = this.findCurtimePElement(allP, time);
             let pHeight = p.getBoundingClientRect().top;
-            let lines = $(this.el).children().children();
+            let lines = $(this.el).find('.song-lyric .lines');
             let linesHeight = lines[0].getBoundingClientRect().top;
             let height = pHeight - linesHeight;
             lines.css({
