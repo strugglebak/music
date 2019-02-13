@@ -10,7 +10,7 @@
     };
     let model = {
         data: {
-            title: '', author: '', link: '', lyric: '', id: '',
+            title: '', author: '', link: '', cover: '', lyric: '', id: '',
         },
         fetchSongById(id) {
             var Song = new AV.Query('Song');
@@ -64,6 +64,7 @@
                 this.audio.play();
                 this.addPlayingClass();
                 this.onPlayEnd();
+                this.changeCover(this.model.data.cover);
                 window.eventHub.emit('xxx', {songData: dataCopy, audio: this.audio});
             });
         },
@@ -88,6 +89,10 @@
         removePauseClassForPlayButton() {
             let playButton = this.view.$el.find('section.disc-wrapper .disc img.play');
             $(playButton).removeClass('pause');
+        },
+        changeCover(url) {
+            let cover = this.view.$el.find('section.disc-wrapper img.cover');
+            $(cover).attr('src', url);
         }
     };
 

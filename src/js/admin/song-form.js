@@ -20,7 +20,7 @@
                     </div>
                     <div class="row">
                         <label>歌曲封面:</label>
-                        <input name="cover" type="text" value="">
+                        <input name="cover" type="text" value="__cover__">
                     </div>
                     <div class="row actions">
                         <button type="submit">保 存</button>
@@ -35,7 +35,7 @@
             </form>
         `,
         render(data) {
-            let placeHolders = 'title author link lyric id'.split(' ');
+            let placeHolders = 'title author link cover lyric id'.split(' ');
             let html = this.template;
             placeHolders.map((string)=> {
                 html = html.replace(`__${string}__`, data[string] || '');
@@ -55,7 +55,7 @@
     };
     let model = {
         data: {
-            title: '', author: '', link: '', lyric: '', id: '',
+            title: '', author: '', link: '', cover: '', lyric: '', id: '',
         },
         save(data) {
             var Song = AV.Object.extend('Song');
@@ -64,6 +64,7 @@
             song.set('author', data.author);
             song.set('link', data.link);
             song.set('lyric', data.lyric);
+            song.set('cover', data.cover);
             return song.save().then((songData)=> {
                 let {id, attributes} = songData;
                 Object.assign(this.data, {id, ...attributes});
@@ -77,6 +78,7 @@
             song.set('author', data.author);
             song.set('link', data.link);
             song.set('lyric', data.lyric);
+            song.set('cover', data.cover);
             return song.save().then((songData)=> {
                 let {id, attributes} = songData;
                 Object.assign(this.data, {id, ...attributes});
@@ -135,7 +137,7 @@
         bindEvents() {
             this.view.$el.on('submit', 'form', (e)=> {
                 e.preventDefault();
-                let needs = 'title author link lyric'.split(' ');
+                let needs = 'title author link cover lyric'.split(' ');
                 let data = {};
                 needs.map((string)=> {
                     data[string] = this.view.$el.find(`input[name=${string}]`).val();
