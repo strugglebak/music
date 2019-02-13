@@ -29,13 +29,13 @@
                 <div class="column">
                     <div class="row">
                         <label>歌词:</label>
-                        <textarea name="lyrics" cols="25" rows="10"></textarea>
+                        <textarea name="lyric" cols="25" rows="10">__lyric__</textarea>
                     </div>
                 </div>
             </form>
         `,
         render(data) {
-            let placeHolders = 'title author link id'.split(' ');
+            let placeHolders = 'title author link lyric id'.split(' ');
             let html = this.template;
             placeHolders.map((string)=> {
                 html = html.replace(`__${string}__`, data[string] || '');
@@ -55,7 +55,7 @@
     };
     let model = {
         data: {
-            title: '', author: '', link: '', id: '',
+            title: '', author: '', link: '', lyric: '', id: '',
         },
         save(data) {
             var Song = AV.Object.extend('Song');
@@ -63,6 +63,7 @@
             song.set('title', data.title);
             song.set('author', data.author);
             song.set('link', data.link);
+            song.set('lyric', data.lyric);
             return song.save().then((songData)=> {
                 let {id, attributes} = songData;
                 Object.assign(this.data, {id, ...attributes});
@@ -75,6 +76,7 @@
             song.set('title', data.title);
             song.set('author', data.author);
             song.set('link', data.link);
+            song.set('lyric', data.lyric);
             return song.save().then((songData)=> {
                 let {id, attributes} = songData;
                 Object.assign(this.data, {id, ...attributes});
@@ -133,12 +135,13 @@
         bindEvents() {
             this.view.$el.on('submit', 'form', (e)=> {
                 e.preventDefault();
-                let needs = 'title author link'.split(' ');
+                let needs = 'title author link lyric'.split(' ');
                 let data = {};
-                data['id'] = this.model.data.id;
                 needs.map((string)=> {
                     data[string] = this.view.$el.find(`input[name=${string}]`).val();
                 });
+                data['id'] = this.model.data.id;
+                data['lyric'] = this.view.$el.find('textarea[name=lyric]').val();
                 if (! (data['title'] && data['author'] && data['link']) ) {
                     alert('音乐标题/歌手/歌曲外链都不能为空!请重新填写');
                     return;
