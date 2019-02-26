@@ -7,6 +7,8 @@
 
 [手机页面预览](http://strugglebak.com/music/src)
 
+> 注意，本项目仅支持 Firefox,Chrome 新版浏览器，微信或者其他浏览器内核打开页面可能有 bug,预览页面请尽量用 Firefox 或 Chrome 浏览器打开!!!
+
 ## 安装
 ```
 git clone https://github.com/strugglebak/music.git
