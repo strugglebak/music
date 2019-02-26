@@ -74,8 +74,8 @@ PC 端页面如下
 移动端页面如下
 <div align="left">
     <img src="https://i.loli.net/2019/02/26/5c754191ac919.png" width="250">
-    <img src="https://i.loli.net/2019/02/26/5c75418c95c21.png" width="250">
     <img src="https://i.loli.net/2019/02/26/5c75418c75197.png" width="250">
+    <img src="https://i.loli.net/2019/02/26/5c75418c95c21.png" width="250">
 </div>
 <div align="left">
     <img src="https://i.loli.net/2019/02/26/5c75418c930f9.png" width="250">
