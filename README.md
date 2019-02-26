@@ -7,6 +7,40 @@
 
 [手机页面预览](http://strugglebak.com/music/src)
 
+## 安装
+```
+git clone https://github.com/strugglebak/music.git
+```
+安装 `http-server`
+```
+sudo npm i -g http-server
+```
+
+## 使用
+先到 `music` 项目目录安装依赖
+```
+cd music
+npm i -D
+```
+在项目 `music` 目录开启 `node server` 跑上传文件后台
+```
+node server.js 8888
+```
+**在 music 项目**上一级目录开启 `http-server` 跑移动端页面
+```
+cd ..
+http-server -c-1
+```
+打开管理端页面
+```
+open http://127.0.0.1:8080/music/admin
+```
+打开移动端页面
+```
+open http://127.0.0.1:8080/music/src
+```
+> 注意，在本项目中需要用到七牛云的密钥，所以要启动本项目的全部功能你需要去七牛云注册一个账号，并将你的 bucket 名字命名为 **music**
+
 ## 项目说明
 项目的功能主要分两个部分
 
