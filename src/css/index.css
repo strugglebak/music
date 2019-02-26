@@ -92,6 +92,12 @@ section.search > form .input-wrapper { background: #ebecec; border-radius: 30px;
 section.search > form .input-wrapper .input-head { display: flex; align-items: center; padding: 0 7px; }
 section.search > form .input-wrapper .input-head > svg { width: 14px; height: 14px; fill: #c9c9ca; }
 section.search > form .input-wrapper > input[type="text"] { width: 100%; line-height: 26px; height: 30px; color: #c9c9ca; border: none; background: #ebecec; caret-color: black; }
+section.search > form .input-wrapper > input[type="text"]:hover,
+section.search > form .input-wrapper > input[type="text"]:active,
+section.search > form .input-wrapper > input[type="text"]:focus {
+    color: black;
+    border-color: none;
+}
 section.search > form .input-wrapper .input-tail { width: 30px; height: 30px; }
 /* page-search hot-search-view */
 section.hot-search-view { padding: 15px 10px 0; }
