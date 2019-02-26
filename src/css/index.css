@@ -97,6 +97,8 @@ section.search > form .input-wrapper > input[type="text"]:active,
 section.search > form .input-wrapper > input[type="text"]:focus {
     color: black;
     border-color: none;
+    outline:none;   
+    -webkit-tap-highlight-color: none;
 }
 section.search > form .input-wrapper .input-tail { width: 30px; height: 30px; }
 /* page-search hot-search-view */
