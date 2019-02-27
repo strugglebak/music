@@ -28,7 +28,7 @@ npm i -D
 ```
 node server.js 8888
 ```
-**在 music 项目**上一级目录开启 `http-server` 跑移动端页面
+**在 music 项目上一级目录**开启 `http-server` 跑移动端页面
 ```
 cd ..
 http-server -c-1
