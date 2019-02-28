@@ -1,6 +1,6 @@
 # music
 
-一个 jQuery 网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
+一个基于 jQuery 的网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
 
 ## 在线预览
 [PC 页面预览](http://strugglebak.com/music/src/admin)
