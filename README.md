@@ -3,9 +3,9 @@
 一个基于 jQuery 的网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
 
 ## 在线预览
-[PC 页面预览](http://strugglebak.github.io/music/src/admin)
+[PC 页面预览](http://strugglebak.com/music/src/admin)
 
-[手机页面预览](http://strugglebak.github.io/music/src)
+[手机页面预览](http://strugglebak.com/music/src)
 
 > 注意，本项目仅支持 Firefox,Chrome 新版浏览器，微信或者其他浏览器内核打开页面可能有 bug,预览页面请尽量用 Firefox 或 Chrome 浏览器打开!!!
 
