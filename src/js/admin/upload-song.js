@@ -60,7 +60,7 @@
                 runtimes: 'html5',    //上传模式,依次退化
                 browse_button: this.view.find('#uploadButton'),       //上传选择的点选按钮，**必需**
                 uptoken_url: 'http://localhost:8888/uptoken',
-                domain: 'http://pma54ymw2.bkt.clouddn.com',   //bucket 域名，下载资源时用到，**必需**
+                domain: 'http://strugglebak.com.qiniudns.com',   //bucket 域名，下载资源时用到，**必需**
                 get_new_uptoken: false,  //设置上传文件的时候是否每次都重新获取新的 token
                 max_file_size: '40mb',           //最大文件体积限制
                 dragdrop: true,                   //开启可拖曳上传
@@ -79,7 +79,7 @@
                         // 每个文件上传时,处理相关的事情
                         console.log('上传中...')
                         window.eventHub.emit('uploading', {});
-                        
+
                     },
                     'FileUploaded': (up, file, info)=> {
                         console.log('上传完毕!')
