@@ -3,7 +3,7 @@
         el: 'section.songs-play-list > ol.songs',
         template: `
             <li>
-                <a href="/music/src/song?id={{song.id}}">
+                <a href="/travis/music/src/song?id={{song.id}}">
                     <div class="song-info-wrapper">
                         <div class="song-info">
                             <div class="title">{{song.title}}</div>
