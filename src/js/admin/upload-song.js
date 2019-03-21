@@ -94,11 +94,13 @@
 
                         var domain = up.getOption('domain');
                         var res = JSON.parse(info.response);
-                        var sourceLink = domain + '/' + encodeURIComponent(res.key); // 获取上传成功后的文件的Url
-                        var sourceTitle = this.splitFileName(res.key);
+                        var link = domain + '/' + encodeURIComponent(res.key); // 获取上传成功后的文件的Url
+                        var source = this.splitFileName(res.key).split('-');
+                        console.log(source)
+                        var author = source[0];
+                        var title = source[1].split('.').shift();
                         window.eventHub.emit('upload', {
-                            link: sourceLink,
-                            title: sourceTitle
+                            link, author, title,
                         });
                         this.view.$el.addClass('inactive');
                     },
