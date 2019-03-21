@@ -1,4 +1,5 @@
 # music
+[![Build Status](https://travis-ci.org/strugglebak/music.svg?branch=master)](https://travis-ci.org/strugglebak/music)
 
 一个基于 jQuery 的网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
 
