@@ -38,7 +38,7 @@ var server = http.createServer(function(request, response){
     let {accessKey, secretKey} = config;
     var mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
     var options = {
-      scope: 'music',
+      scope: 'music_1',
     };
     var putPolicy = new qiniu.rs.PutPolicy(options);
     var uploadToken=putPolicy.uploadToken(mac);
