@@ -8,9 +8,6 @@ install:
 - npm install
 script:
 - npm run build
-env:
-  global:
-    secure: *********
 addons:
   ssh_known_hosts:
   - 132.232.184.158
