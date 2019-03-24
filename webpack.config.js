@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
+    filename: 'js/[name].[chunkhash].js',
     chunkFilename: '[id].[chunkhash].js',
   },
   module: {
@@ -63,6 +63,18 @@ module.exports = {
         ]
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {}
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
