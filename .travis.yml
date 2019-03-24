@@ -16,5 +16,5 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 after_success:
 - chmod 600 ~/.ssh/id_rsa
-- ssh travis@132.232.184.158 -o StrictHostKeyChecking=no 'cd ~/music && git pull && npm i -D'
+- ssh travis@132.232.184.158 -o StrictHostKeyChecking=no 'cd ~/music && git pull && npm i -D && npm run build'
 
