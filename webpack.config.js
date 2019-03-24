@@ -11,6 +11,9 @@ module.exports = {
 
     indexcss: path.resolve(__dirname, './src/js/index/index.css.js'),
     index: path.resolve(__dirname, './src/js/index/index.js'),
+
+    songcss: path.resolve(__dirname, './src/js/song/song.css.js'),
+    song: path.resolve(__dirname, './src/js/song/song.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -66,6 +69,14 @@ module.exports = {
       from: __dirname + '/src/img/',
       to: __dirname + '/dist/img'
     }]),
+    new HtmlWebpackPlugin({
+      filename: 'song.html',
+      template: './src/song.html',
+      favicon: './favicon.png',
+      chunks: ['songcss', 'song'],
+      inject: 'true',
+      hash: true,
+    }),
     new HtmlWebpackPlugin({
       filename: 'admin.html',
       template: './src/admin.html',
