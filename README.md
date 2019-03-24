@@ -4,9 +4,9 @@
 一个基于 jQuery 的网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
 
 ## 在线预览
-[PC 页面预览](http://strugglebak.com/travis/music/src/admin)
+[PC 页面预览](http://strugglebak.com/music/dist/admin)
 
-[手机页面预览](http://strugglebak.com/travis/music/src)
+[手机页面预览](http://strugglebak.com/music/dist)
 
 > 注意，本项目仅支持 Firefox,Chrome 新版浏览器，微信或者其他浏览器内核打开页面可能有 bug,预览页面请尽量用 Firefox 或 Chrome 浏览器打开!!!
 
@@ -125,6 +125,8 @@ PC 端页面如下
 当然这个项目还在完善中，我觉得要完成以上的功能需要调用到一些 api 来做，目前找到的一个开源的项目很不错,地址在[这里](https://github.com/Binaryify/NeteaseCloudMusicApi), 直接在服务器上跑一个 node.js 的服务，通过这个强大的 api，还是可以逐渐做好的。
 
 ## 更新日志
+- 2019.03.24
+增加 webpack 脚手架项目打包,输出文件在 `dist` 目录
 - 2019.03.21
 增加 travis ci 部署，可以直接 push 到服务器上啦
 - 2019.02.17
