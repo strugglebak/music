@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -77,11 +78,19 @@ module.exports = {
     }
   },
   plugins: [
+    new CleanWebpackPlugin({
+      // 打印 log
+      verbose: true,
+      // 删除文件
+      dry: false,
+      // 要删除的文件
+      cleanOnceBeforeBuildPatterns: ['**/*', '!img', '!image'],
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "css/[name].css",
-      chunkFilename: "[id].css"
+      filename: "css/[name].[chunkhash].css",
+      chunkFilename: "[id].[chunkhash].css"
     }),
     new webpack.ProvidePlugin({
       AV: 'leancloud-storage',
