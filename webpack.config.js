@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'development',
@@ -34,11 +35,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader',
+        use: [
           {
-            loader: 'css-loader',
-          }
-        ]
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it use publicPath in webpackOptions.output
+            }
+          },
+          "css-loader"
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -59,6 +65,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "css/[name].css",
+      chunkFilename: "[id].css"
+    }),
     new webpack.ProvidePlugin({
       AV: 'leancloud-storage',
       plupload: 'plupload',
