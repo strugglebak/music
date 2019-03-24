@@ -1,12 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
     admincss: path.resolve(__dirname, './src/js/admin/admin.css.js'),
     admin: path.resolve(__dirname, './src/js/admin/admin.js'),
+
+    indexcss: path.resolve(__dirname, './src/js/index/index.css.js'),
+    index: path.resolve(__dirname, './src/js/index/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -58,11 +62,23 @@ module.exports = {
       Qiniu: path.resolve(path.join(__dirname, 'node_modules/my-qiniu-js/src/qiniu.js')),
       $: 'jquery',
     }),
+    new CopyWebpackPlugin([{
+      from: __dirname + '/src/img/',
+      to: __dirname + '/dist/img'
+    }]),
     new HtmlWebpackPlugin({
       filename: 'admin.html',
       template: './src/admin.html',
       favicon: './favicon.png',
       chunks: ['admincss', 'admin'],
+      inject: 'true',
+      hash: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html',
+      favicon: './favicon.png',
+      chunks: ['indexcss', 'index'],
       inject: 'true',
       hash: true,
     }),
