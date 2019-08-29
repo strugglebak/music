@@ -73,7 +73,8 @@ PC 端页面如下
     - 音乐播放有即时暂停功能
 
 移动端页面如下
-![mobile](https://i.loli.net/2019/02/26/5c754191ac919.png){: width="100px" height="100px"}
+<img src="https://i.loli.net/2019/02/26/5c754191ac919.png" width="250">
+![mobile](https://i.loli.net/2019/02/26/5c754191ac919.png)
 ![mobile](https://i.loli.net/2019/02/26/5c75418c75197.png)
 ![mobile](https://i.loli.net/2019/02/26/5c75418c95c21.png)
 ![mobile](https://i.loli.net/2019/02/26/5c75418c930f9.png)
