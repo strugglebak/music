@@ -73,12 +73,12 @@ PC 端页面如下
     - 音乐播放有即时暂停功能
 
 移动端页面如下
-![mobile](https://i.loli.net/2019/02/26/5c754191ac919.png)
-![mobile](https://i.loli.net/2019/02/26/5c75418c75197.png)
-![mobile](https://i.loli.net/2019/02/26/5c75418c95c21.png)
-![mobile](https://i.loli.net/2019/02/26/5c75418c930f9.png)
-![mobile](https://i.loli.net/2019/02/26/5c75418ab0cb1.png)
-![mobile](https://i.loli.net/2019/02/27/5c7639252d53d.jpg)
+![mobile](https://i.loli.net/2019/02/26/5c754191ac919.png =250)
+![mobile](https://i.loli.net/2019/02/26/5c75418c75197.png =250)
+![mobile](https://i.loli.net/2019/02/26/5c75418c95c21.png =250)
+![mobile](https://i.loli.net/2019/02/26/5c75418c930f9.png =250)
+![mobile](https://i.loli.net/2019/02/26/5c75418ab0cb1.png =250)
+![mobile](https://i.loli.net/2019/02/27/5c7639252d53d.jpg =250)
 
 ## 项目优势
 项目主要采用的技术栈 `jQuery` + `AJAX` + `MVC`设计模式 + `原生ES5/ES6` + `正则` + `LeanCloud` + `七牛云` + `Travis CI 持续集成` + `webpack`
