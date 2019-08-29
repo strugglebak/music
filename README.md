@@ -59,12 +59,8 @@ open http://127.0.0.1:8080/music/src
     - 文件上传时自动播放 loading 动画
 
 PC 端页面如下
-<div align="center">
-    <img src="https://i.loli.net/2019/02/26/5c753ed21e6db.png" width="800">
-</div>
-<div align="center">
-    <img src="https://i.loli.net/2019/02/26/5c7543ceafb8a.png" width="800">
-</div>
+![](https://i.loli.net/2019/02/26/5c753ed21e6db.png)
+![](https://i.loli.net/2019/02/26/5c7543ceafb8a.png)
 
 2. 移动端
 
@@ -77,16 +73,12 @@ PC 端页面如下
     - 音乐播放有即时暂停功能
 
 移动端页面如下
-<div align="left">
-    <img src="https://i.loli.net/2019/02/26/5c754191ac919.png" width="250">
-    <img src="https://i.loli.net/2019/02/26/5c75418c75197.png" width="250">
-    <img src="https://i.loli.net/2019/02/26/5c75418c95c21.png" width="250">
-</div>
-<div align="left">
-    <img src="https://i.loli.net/2019/02/26/5c75418c930f9.png" width="250">
-    <img src="https://i.loli.net/2019/02/26/5c75418ab0cb1.png" width="250">
-    <img src="https://i.loli.net/2019/02/27/5c7639252d53d.jpg" width="250">
-</div>
+![](https://i.loli.net/2019/02/26/5c754191ac919.png)
+![](https://i.loli.net/2019/02/26/5c75418c75197.png)
+![](https://i.loli.net/2019/02/26/5c75418c95c21.png)
+![](https://i.loli.net/2019/02/26/5c75418c930f9.png)
+![](https://i.loli.net/2019/02/26/5c75418ab0cb1.png)
+![](https://i.loli.net/2019/02/27/5c7639252d53d.jpg)
 
 ## 项目优势
 项目主要采用的技术栈 `jQuery` + `AJAX` + `MVC`设计模式 + `原生ES5/ES6` + `正则` + `LeanCloud` + `七牛云` + `Travis CI 持续集成` + `webpack`
@@ -100,9 +92,7 @@ PC 端页面如下
 - `webpack` 使用最流行的打包工具，模块化项目构建，将 `js`、`sass`、`image` 等依赖全部打包成 `static assets`,集中式的模块化输出
 
 ## 项目架构
-<div align="center">
-    <img src="https://i.loli.net/2019/02/26/5c753d97106e3.png">
-</div>
+![](https://i.loli.net/2019/02/26/5c753d97106e3.png)
 
 如图所示的架构,架构图中说明了以下几点
 - 管理页面通过七牛云 api 来存储文件，然后把该文件的外链存放到 LeanCloud 中
