@@ -1,7 +1,7 @@
 # music
 [![Build Status](https://travis-ci.org/strugglebak/music.svg?branch=master)](https://travis-ci.org/strugglebak/music)
 
-> 注意，该项目是基于 webpack@4 构建，尚未对 webpack v4 版本以下做兼容，clone 的同学请注意升级
+> 注意，该项目是基于 **Webpack@4** 构建，尚未对 **Webpack** v4 版本以下做兼容，clone 的同学请注意升级
 
 一个基于 jQuery 的网站 app 应用，主要界面仿(chao)照(xi) [music.163.com/m](music.163.com/m)
 
