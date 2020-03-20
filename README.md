@@ -25,24 +25,23 @@ sudo npm i -g http-server
 先到 `music` 项目目录安装依赖
 ```
 cd music
-npm i -D
+yarn install -D
 ```
-在项目 `music` 目录开启 `node server` 跑上传文件后台
+在项目 `music` 目录开启如下命令跑上传文件后台
 ```
-node server.js 8888
+yarn serve
 ```
-**在 music 项目上一级目录**开启 `http-server` 跑移动端页面
+在项目 `music` 目录开启如下命令开启预览
 ```
-cd ..
-http-server -c-1
+yarn start
 ```
 打开管理端页面
 ```
-open http://127.0.0.1:8080/music/admin
+open http://127.0.0.1:9000/admin.html
 ```
 打开移动端页面
 ```
-open http://127.0.0.1:8080/music/src
+open http://127.0.0.1:9000/
 ```
 > 注意，在本项目中需要用到七牛云的密钥，所以要启动本项目的全部功能你需要去七牛云注册一个账号，并将你的 bucket 名字命名为 **music**
 
