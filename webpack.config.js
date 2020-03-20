@@ -19,8 +19,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[chunkhash].js',
-    chunkFilename: '[id].[chunkhash].js',
+    filename: 'js/[name].[hash].js',
+    chunkFilename: '[id].[hash].js',
   },
   module: {
     rules: [
@@ -77,7 +77,16 @@ module.exports = {
       cacheGroups: {}
     }
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+    hot: true
+  },
   plugins: [
+    new webpack.HotModuleReplacementPlugin({
+      // Options...
+    }),
     new CleanWebpackPlugin({
       // 打印 log
       verbose: true,
@@ -128,4 +137,3 @@ module.exports = {
     }),
   ]
 };
-
