@@ -16,10 +16,6 @@
 ```
 git clone https://github.com/strugglebak/music.git
 ```
-安装 `http-server`
-```
-sudo npm i -g http-server
-```
 
 ## 使用
 先到 `music` 项目目录安装依赖
