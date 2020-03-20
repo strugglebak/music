@@ -56,5 +56,5 @@ var server = http.createServer(function(request, response){
   }
 });
 
-server.listen(port);
+server.listen(port || 8888);
 console.log('监听 ' + port + ' 成功\n请打开 http://localhost:' + port);
